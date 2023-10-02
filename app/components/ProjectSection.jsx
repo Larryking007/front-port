@@ -22,11 +22,11 @@ const ProjectData = [
   },
   {
     id: 3,
-    title: "React Firebase",
+    title: "HairDay",
     description: "",
     images: "",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://larryking007.github.io/hairday/",
     previewUrl: "/",
   },
   {
