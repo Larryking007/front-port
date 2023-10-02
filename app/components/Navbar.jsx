@@ -1,7 +1,8 @@
 "use client";
-import { React, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
 const navLinks = [
@@ -30,29 +31,29 @@ const Navbar = () => {
           LOGO
         </Link>
         <div className="mobile-menu block md:hidden">
-          {navbarOpen ? (
+          {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white "
             >
-              x
+              <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white "
             >
-              y
+              <XCircleIcon className="h-5 w-5" />
             </button>
           )}
         </div>
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 sm:flex-row md:space-x-8 mt-1o">
-            {navLinks.map((link, index) => {
+            {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink href={link.path} title={link.title} />
-              </li>;
-            })}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
