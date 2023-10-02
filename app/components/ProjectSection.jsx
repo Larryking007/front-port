@@ -13,7 +13,7 @@ const ProjectData = [
   },
   {
     id: 2,
-    title: "Calculator",
+    title: "Qrcode generator",
     description: "",
     images: "",
     tag: ["All", "Web"],
@@ -49,7 +49,7 @@ const ProjectData = [
   },
   {
     id: 6,
-    title: "Url Shortner",
+    title: "School timetable",
     description: "",
     images: "",
     tag: ["All", "Web"],
