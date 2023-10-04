@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
+import { motion, useInView } from "framer-motion";
 
 const ProjectData = [
   {
@@ -59,24 +60,30 @@ const ProjectData = [
 ];
 
 const ProjectSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <>
-      <h2>My Projects</h2>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {ProjectData.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.images}
-            tag={project}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-          >
-            {" "}
-          </ProjectCard>
-        ))}
-      </div>
+      <section ref={ref}>
+        <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+          My Projects
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {ProjectData.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.images}
+              tag={project}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            >
+              {" "}
+            </ProjectCard>
+          ))}
+        </div>
+      </section>
     </>
   );
 };
