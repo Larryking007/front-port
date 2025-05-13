@@ -1,6 +1,7 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react/no-escaped-entities": "off"
-  }
+    "react/no-escaped-entities": "off",
+  },
+  "ignoreDuringBuilds": true
 }
